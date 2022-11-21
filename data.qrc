@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>data/PNG/caisse.png</file>
+        <file>data/PNG/ground.png</file>
+        <file>data/PNG/marque_point.png</file>
+        <file>data/PNG/playerFace0.png</file>
+        <file>data/PNG/wall.png</file>
+        <file>data/PNG/caisse - marque.png</file>
+        <file>data/PNG/logo.jpeg</file>
+        <file>data/PNG/aide_Sokoban.png</file>
+        <file>data/PNG/playerFace1.png</file>
+    </qresource>
+    <qresource prefix="/level">
+        <file>data/LVL/Niveau1.txt</file>
+        <file>data/LVL/Niveau2.txt</file>
+        <file>data/LVL/Niveau3.txt</file>
+        <file>data/LVL/level.txt</file>
+        <file>data/LVL/Niveau11.txt</file>
+        <file>data/LVL/Niveau10.txt</file>
+        <file>data/LVL/Niveau8.txt</file>
+        <file>data/LVL/Niveau7.txt</file>
+        <file>data/LVL/Niveau6.txt</file>
+        <file>data/LVL/Niveau5.txt</file>
+        <file>data/LVL/Niveau4.txt</file>
+        <file>data/LVL/Niveau9.txt</file>
+        <file>data/LVL/Niveau12.txt</file>
+    </qresource>
+</RCC>
