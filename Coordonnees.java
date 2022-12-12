@@ -1,10 +1,13 @@
 package code;
 
+import javax.swing.JPanel;
+
 public class Coordonnees {
 
 	//Attributs
 		private	int i=0;
 		private	int j=0;
+		public 	MonPanel P;
 		/* Constructeurs par défault
 		 */
 		public Coordonnees(){}

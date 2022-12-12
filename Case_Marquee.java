@@ -18,7 +18,7 @@ public class Case_Marquee extends Case{
 		
 		//Redefinition Méthodes Abstraites :
 		@Override
-		public void afficher_case(int i, int j){this.ImCase = new ImageIcon(new ImageIcon(":/images/data/PNG/marque_point.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		public void afficher_case(int i, int j){this.ImCase = new ImageIcon(new ImageIcon("/PNG/marque_point.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 		ImCase.paintIcon(null, null, i, j);
 		}
 

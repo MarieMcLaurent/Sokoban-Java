@@ -1,6 +1,7 @@
 package code;
 
 import java.util.HashMap;
+import java.util.*;
 import java.io.*;
 import java.lang.Class;
 public class Plateau extends Coordonnees {
@@ -9,11 +10,11 @@ public class Plateau extends Coordonnees {
 	//Attributs
 	private int nbCaisse = 0;
 	private	int largeur = 7;
-	private	int hauteur = 6;
+	private	int longueur = 6;
 	private Class cls;
-	/*private Personnage PersoSurPlateau;*/
+	private Personnage PersoSurPlateau;
 	private	HashMap<Coordonnees, Case> cases= new HashMap<Coordonnees, Case>();
-
+	private ArrayList<Caisse> ListeCaisse = new ArrayList<>();
 	/* Constructeurs par défault
 	 */
 	public Plateau(){
@@ -31,6 +32,7 @@ public class Plateau extends Coordonnees {
 		super(x,y);
 		InputStream inputStream = null;
 		String line;
+		Char temp = "";
 		try {
 			Class cls = Class.forName("ClassLoaderDemo");
 
@@ -50,25 +52,25 @@ public class Plateau extends Coordonnees {
 		        // Créer l'objet BufferedReader        
 		        BufferedReader br = new BufferedReader(fr); 
 		        if ((line = br.readLine()) != null) {
-		        	nbCaisse = int(line);
-		        	longueur = int(br.readLine());
-		        	largeur = int(br.readLine());
+		        	nbCaisse = Integer.parseInt(line);
+		        	longueur = Integer.parseInt(br.readLine());
+		        	largeur = Integer.parseInt(br.readLine());
 		            for (int i=0; i<longueur;i++){
 		            	line = br.readLine();
 		                for (int j=0; j<largeur;j++){
 		                	temp=line[j];
 		                    switch(temp){
-		                        case '#' : cases.put(new Coordonnees(i,j),new Case_Mur(i,j)); break;
-		                        case '_' : cases.put(new Coordonnees(i,j),new Case_Vide(i,j)); break;
-		                        case '.' : cases.put(new Coordonnees(i,j),new Case_Marquee(i,j));break;
+		                        case '#' : cases.put(new Coordonnees(i,j),new Case_Mur(1)); break;
+		                        case '_' : cases.put(new Coordonnees(i,j),new Case_Vide(0)); break;
+		                        case '.' : cases.put(new Coordonnees(i,j),new Case_Marquee(2));break;
 		                        case '@' : PersoSurPlateau = new Personnage(i, j);
-		                        cases.put(new Coordonnees(i,j),new Case_Vide(i,j)); break;
+		                        cases.put(new Coordonnees(i,j),new Case_Vide(0)); break;
 		                        case '+' : PersoSurPlateau = new Personnage(i, j);
-		                        cases.put(new Coordonnees(i,j),new Case_Marquee(i,j));break;
-		                        case '$' : ListeCaisse.push_back(new Caisse(i, j, false));
-		                        cases.put(new Coordonnees(i,j),new Case_Vide(i,j)); break;
-		                        case '*' : ListeCaisse.push_back(new Caisse(i, j, false));
-		                        cases.put(new Coordonnees(i,j),new Case_Marquee(i,j));break;
+		                        cases.put(new Coordonnees(i,j),new Case_Marquee(2));break;
+		                        case '$' : ListeCaisse.add(new Caisse(i,j, false,4));
+		                        cases.put(new Coordonnees(i,j),new Case_Vide(0)); break;
+		                        case '*' : ListeCaisse.add(new Caisse(i, j, false,4));
+		                        cases.put(new Coordonnees(i,j),new Case_Marquee(2));break;
 		                    }
 		                }
 	            }
@@ -91,11 +93,11 @@ public class Plateau extends Coordonnees {
 	public int getLargeur(){return largeur;}
 	public int getHauteur(){return hauteur;}
 
-	int Plateau:: getNbCaisse(){
+	int getNbCaisse(){
 	    return nbCaisse;
 	}
 
-	vector<Caisse*> Plateau::getListeCaisse(){
+	ArrayList<Caisse> getListeCaisse(){
 	    return ListeCaisse;
 	}
 	void Plateau:: afficher_Plateau(QPainter *p,int perso){

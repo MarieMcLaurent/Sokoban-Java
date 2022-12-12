@@ -36,6 +36,7 @@ public class FenetrePrincipale extends JFrame {
 	private JLabel lblAdresse;
 	private JButton btnButtonRemplir;
 	private JButton btnButtonVider;
+	private Plateau Plt;
 	
 	/**
 	 * Launch the application.
@@ -121,7 +122,7 @@ public class FenetrePrincipale extends JFrame {
 		lblAdresse.setBounds(84, 32, 60, 19);
 		contentPane.add(lblAdresse);
 		
-		JButton btnButtonRemplir = new JButton("Remplir");
+		btnButtonRemplir = new JButton("Remplir");
 		btnButtonRemplir.setBackground(UIManager.getColor("Table.selectionBackground"));
 		btnButtonRemplir.setForeground(Color.BLACK);
 		btnButtonRemplir.addActionListener(new ActionListener() {
@@ -170,6 +171,8 @@ public class FenetrePrincipale extends JFrame {
 		valider.setBounds(278, 164, 84, 89);
 		valider.setIcon(new ImageIcon(val));
 		contentPane.add(valider);
+		
+		
 		
 	}
 
