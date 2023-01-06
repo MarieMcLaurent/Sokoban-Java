@@ -1,5 +1,7 @@
 package code;
-import javax.swing.ImageIcon;
+
+
+import java.awt.Graphics;
 import java.awt.Image;
 
 public class Case_Mur extends Case{
@@ -12,14 +14,13 @@ public class Case_Mur extends Case{
 		 * @param i,j : entiers correspondants
 		 */
 		public Case_Mur(int type){ 
-			super(type);
+			super(type,"PNG/wall");
 		}
 		
 		//Redefinition Méthodes Abstraites :
 		@Override
-		public void afficher_case(int i, int j){this.ImCase = new ImageIcon(new ImageIcon("/PNG/mur.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
-
-		ImCase.paintIcon(null, null, i, j);
+		public void afficher_case(Graphics g,int i, int j){
+			g.drawImage(this.ImCase.getImage(),j*50,i*50+25, 50,50, null);
 		}
 
 }

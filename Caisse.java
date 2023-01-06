@@ -1,5 +1,7 @@
 package code;
+
 import javax.swing.ImageIcon;
+import java.awt.Graphics;
 
 public class Caisse extends Coordonnees{
 	
@@ -12,6 +14,10 @@ public class Caisse extends Coordonnees{
 		super(x,y);
 		EtatCaisse = Etat;
 		type = m_type;
+		if (EtatCaisse == true) 
+			ImCaisse = new ImageIcon("PNG/caisse-marque.png");
+		else
+			ImCaisse = new ImageIcon("PNG/caisse.png");
 	}
 	
 	public boolean getEtat() {return EtatCaisse;}
@@ -20,10 +26,11 @@ public class Caisse extends Coordonnees{
 	
 	public void ChangementCouleur() {EtatCaisse = !EtatCaisse;}
 	
-	public void afficher_caisse() {
+	public void afficher_caisse(Graphics g) {
 		if (EtatCaisse == true) 
-			ImCaisse = new ImageIcon(":/images/data/PNG/caisse-marque.png");
+			ImCaisse = new ImageIcon("PNG/caisse-marque.png");
 		else
-			ImCaisse = new ImageIcon(":/images/data/PNG/caisse.png");
+			ImCaisse = new ImageIcon("PNG/caisse.png");
+		g.drawImage(this.ImCaisse.getImage(),this.getJ()*50,this.getI()*50+25, 50,50, null);
 	}
 }
