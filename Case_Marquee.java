@@ -15,7 +15,7 @@ public class Case_Marquee extends Case{
 		 * @param i,j : entiers correspondants
 		 */
 		public Case_Marquee(int type){ 
-			super(type,"PNG/marque_point");
+			super(type,"PNG/marque_point.png");
 		}
 		
 		//Redefinition Méthodes Abstraites :

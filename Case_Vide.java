@@ -14,7 +14,7 @@ public class Case_Vide  extends Case{
 		 * @param i,j : entiers correspondants
 		 */
 		public Case_Vide(int type){ 
-			super(type,"/PNG/ground.png");
+			super(type,"PNG/ground.png");
 		}
 		
 		//Redefinition Méthodes Abstraites :

@@ -14,7 +14,7 @@ public class Case_Mur extends Case{
 		 * @param i,j : entiers correspondants
 		 */
 		public Case_Mur(int type){ 
-			super(type,"PNG/wall");
+			super(type,"PNG/wall.png");
 		}
 		
 		//Redefinition Méthodes Abstraites :
